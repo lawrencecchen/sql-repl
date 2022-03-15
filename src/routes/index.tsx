@@ -72,9 +72,8 @@ export default function Home() {
     const doc = v.state.doc;
     const range = v.state.selection.ranges[0];
     const cursorIndex = range.from;
-    const endIndex = doc.length;
+    console.log(range, range.pos)
     const start = getStart(doc, cursorIndex)
-    // const start = 0
     const end = getEnd(doc, cursorIndex)
     const codeBlock = doc.slice(start, end + 1).toJSON().filter((v) => v !== ";" && v.length > 0);
     
